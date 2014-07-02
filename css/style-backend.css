@@ -1,0 +1,631 @@
+.test{
+	border: 1px solid #a94442;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.error-msg-display{
+	color:rgb(197, 22, 22);
+	font-size: 30px;
+	font-family: 'Patua One',sans-serif;
+	text-align: center;
+	padding: 30px;
+}
+
+
+@font-face {
+    font-family: 'Gilda Display'; /*a name to be used later*/
+    src: url('font/Gilda_Display/GildaDisplay-Regular.ttf'); /*URL to font*/
+    font-family: 'Patua One'; /*a name to be used later*/
+    src: url('font/PatuaOne-Regular.ttf');
+}
+
+
+body{
+	background: url('../images/background.png');
+	overflow-y: hidden;
+	overflow-x:hidden;
+}
+/* left panel navigation */
+nav#left-panel {
+	position: fixed;
+	left: 0;
+	width: 70px;
+	height: 100%;
+	background: #2b2b2b;
+	z-index: 5000;
+	color: #fff;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+#left-panel .logo{
+	font-size:40px; 
+	background:#1D4F81; 
+	padding:10px; 
+	text-align:center; 
+	font-weight:bold;
+	cursor: pointer;
+}
+#left-panel .logo-anchor {
+	color: #fff;
+	text-decoration: none;
+}
+#left-panel .icon{
+	margin-left: 10px;
+
+}
+#left-panel .icon img{
+	width: 47px;
+	height: 49px;
+	padding: 6px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	margin-left: 2px;
+	margin-top: 2px;
+}
+#left-panel .icon img:hover{
+	-webkit-box-shadow: 3px 0px 18px 4px rgba(0,0,0,0.75);
+	-moz-box-shadow: 3px 0px 18px 4px rgba(0,0,0,0.75);
+	box-shadow: 3px 0px 18px 4px rgba(0,0,0,0.75);
+}
+#left-panel .icon .active{
+	-webkit-box-shadow: 3px 0px 18px 4px rgba(0,0,0,0.75);
+	-moz-box-shadow: 3px 0px 18px 4px rgba(0,0,0,0.75);
+	box-shadow: 3px 0px 18px 4px rgba(0,0,0,0.75);
+
+}
+
+
+
+/* end left panel navigation*/
+
+
+/* main body */
+div.main-body {
+	position: relative;
+	width: calc(100% - 70px);
+	height: 100%;
+	margin: 0 0 0 70px;
+	overflow: hidden;
+	-webkit-transition: width 200ms ease;
+	-moz-transition: width 200ms ease;
+	-ms-transition: width 200ms ease;
+	-o-transition: width 200ms ease;
+	transition: width 200ms ease;
+}
+div.main-body .heading{
+	height: 77px;
+	border-bottom: 1px solid rgb(207, 207, 207);
+	font-size: 23px;
+	padding: 22px 15px;
+	font-family: Gilda Display;
+	color:#1D4F81;
+}
+
+div.main-body .label-text{
+	font-size: 16px;
+	font-family: Gilda Display;
+	text-align: left;
+}
+
+div.main-body .label-heading{
+	font-size: 17px;
+	font-family: Gilda Display;
+	text-align: left;
+	font-weight: bold;
+	color:#1D4F81;
+}
+div.main-body .label-value{
+	font-size: 16px;
+	font-family: Gilda Display;
+	text-align: left;
+	color:#000;
+}
+div.main-body .label-value img{
+	height: 14px;
+}
+
+
+
+/*alert message which is display when campaign or product are not available into database..*/
+div.main-body .alert-msg{
+	text-align: center;
+	margin-top: 40px;
+	font-size: 20px;
+	color: rgb(189, 0, 0);
+	font-family: Gilda Display;
+}
+div.main-body .alert-msg a{
+	color: #1D4F81;
+	text-decoration: none;
+}
+/* // end alert message which is display when campaign or product are not available into database..*/
+
+
+
+
+/*left hand side division section*/
+div.main-body .left-side{
+	margin-right: 0px;
+	background: #fff;
+	border-right: 1px solid rgb(207, 207, 207);
+}
+div.main-body .left-side .search-bar{
+	height: 50px;
+	border-bottom: 1px solid rgb(207,207,207);
+}
+div.main-body .left-side .search-bar .search-text
+{
+	border:none;
+	width: 100%;
+	height: 100%;
+	font-size: 18px;
+	font-family: Gilda Display;
+	color: #1D4F81;
+	padding-left: 20px;
+	background: url(../images/search.jpg) no-repeat 98% 50%;
+	background-size: 27px;
+	padding-right: 55px;
+}
+div.main-body .left-side .search-bar #campaign-date
+{
+	border:none;
+	width: 100%;
+	height: 48px;
+	font-size: 18px;
+	font-family: Gilda Display;
+	color: #1D4F81;
+	padding-left: 20px;
+	background-size: 27px;
+}
+div.main-body .left-side .search-bar input[type='text']:focus{
+	border:none;
+	outline:0;
+}
+
+div.main-body .left-side .search-bar select{
+	border: 0;
+	width: 100%;
+	font-family: Gilda Display;
+	font-size: 18px;
+	padding: 12px;
+	outline: 0;
+	color:#929292;
+}
+
+div.main-body .left-side .view-grid{
+	width: 100%;
+	overflow-y: auto;
+	overflow-x:hidden;
+	max-height: 516px;
+	height: 516px;
+}
+
+div.main-body .left-side .section .top-label{
+	background: #1D4F81;
+	color: #fff;
+	padding: 4px 33px;
+	font-family: Gilda Display;
+	font-size: 16px; 
+}
+
+div.main-body .left-side .section .heading-left {
+	text-align: left;
+}
+div.main-body .left-side .section .heading-right {
+	text-align: right;
+	padding-right: 10px;
+}
+div.main-body .left-side .section .heading-right img{
+	height: 20px;
+}
+
+div.main-body .left-side .section .bottom-label{
+	width: 100%;
+	padding: 5px 20px;
+	font-family: Gilda Display;
+	font-size: 16px;
+	border-bottom: 1px solid rgb(207, 207, 207);
+	cursor: pointer;
+	height: 77px;
+	overflow: hidden;
+}
+div.main-body .left-side .section .bottom-label.selected{
+	background: #E6E6E6;
+}
+div.main-body .left-side .section .bottom-label a{
+	color: #000;
+}
+
+/* // end left hand side division section*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*start right side division section*/
+
+div.main-body .right-side .display-div{
+	margin: 20px 18px 10px 8px;
+	background: #fff;
+	border:1px solid rgb(207,207,207);
+	box-shadow: 0px 0px 10px 1px rgba(119, 119, 119, 0.75);
+-moz-box-shadow: 0px 0px 10px 1px rgba(119, 119, 119, 0.75);
+-webkit-box-shadow: 0px 0px 10px 1px rgba(119, 119, 119, 0.75);
+}
+
+div.main-body .right-side .display-div .display-data-form{
+	max-height: 468px;
+	height: 468px;
+	overflow-y: auto;
+	overflow-x:hidden;
+	padding: 20px;
+}
+div.main-body .right-side .right-section-heading{
+
+	border-bottom: 1px solid rgb(207, 207, 207);
+	font-size: 18px;
+	font-weight: bold;
+	padding: 10px 15px;
+	font-family: Gilda Display;
+	color:#1D4F81;
+}
+
+div.main-body .right-side .right-section-heading .success-msg{
+	color:rgb(21, 167, 21);
+	font-weight: normal;
+	text-align: left;
+}
+div.main-body .right-side .right-section-heading .error-msg{
+	color:rgb(211, 0, 0);
+	font-weight: normal;
+	text-align: left;
+}
+
+div.main-body .right-side .right-section-heading .edit{
+	text-align: right;
+}
+
+div.main-body .right-side .edit-btn {
+	height: 22px;
+	width: 22px;
+	cursor: pointer;
+	display: none;
+}
+div.main-body .right-side .view-btn {
+	height: 22px;
+	width: 22px;
+	cursor: pointer;
+	display: none;
+}
+div.main-body .right-side .close-btn {
+	height: 22px;
+	width: 22px;
+	display: none;
+	cursor: pointer;
+}
+div.main-body .right-side .right-section-heading .cross img{
+	height: 11px;
+}
+div.main-body .right-side .right-section-heading .cross{
+	right: 0px;
+	top:4px;
+	left: 107px;
+}
+
+/* // end start right side division section*/
+
+
+.submit-btn{
+	padding: 7px;
+	background: #1D4F81;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	font-family: Gilda Display;
+	font-size: 18px;
+	border:none;
+	cursor: pointer;
+}
+.cancel-btn{
+	padding: 7px;
+	background: #fff;
+	width: 100%;
+	text-align: center;
+	color: #1D4F81;
+	font-family: Gilda Display;
+	font-size: 18px;
+	border: 1px solid #1D4F81;
+	cursor: pointer;
+}
+
+.submit-btn:hover{
+	-webkit-box-shadow: 0px 3px 7px 0px rgba(92,92,92,1);
+-moz-box-shadow: 0px 3px 7px 0px rgba(92,92,92,1);
+box-shadow: 0px 3px 7px 0px rgba(92,92,92,1);
+}
+
+.cancel-btn:hover{
+	-webkit-box-shadow: 0px 3px 7px 0px rgba(92,92,92,1);
+-moz-box-shadow: 0px 3px 7px 0px rgba(92,92,92,1);
+box-shadow: 0px 3px 7px 0px rgba(92,92,92,1);
+}
+
+.checkbox{
+	display: none;
+}
+div.checkbox-img{
+	height:24px;
+	width:24px;
+	background: url(../images/blue.png) no-repeat -23px 0px;
+}
+
+.radio{
+	display: none;
+}
+div.radio-img{
+	height:24px;
+	width:24px;
+	background: url(../images/blue.png) no-repeat -143px 0px;
+}
+
+.percent-box{
+	background: url(../images/precentage.png) #fff no-repeat 98% 50%;;
+	background-size: 20px;
+	padding-right: 27px;
+
+}
+
+
+.checkbox{
+	display: none;
+}
+div.checkbox-img{
+	height:24px;
+	width:24px;
+	background: url(../images/blue.png) no-repeat -23px 0px;
+}
+
+.radio{
+	display: none;
+}
+div.radio-img{
+	height:24px;
+	width:24px;
+	background: url(../images/blue.png) no-repeat -143px 0px;
+}
+
+.image{
+	position: relative;
+	z-index: 10;
+}
+.image .cross{
+	z-index: 1;
+	top:4px;
+	right: 22px;
+	position: absolute;
+}
+.image .cross img{
+	height: 20px;
+	cursor: pointer;
+}
+.upload-file{
+	width: 100%;
+	font-size: 17px;
+	color: #fff;
+	padding:7px;
+	font-family: Gilda Display;
+	text-align: center;
+	background:#1D4F81;
+	cursor: pointer;
+}
+.error-msg{
+	font-size: 16px;
+	font-family: Gilda Display;
+	color:rgb(189, 0, 0);
+	padding-top: 2px;
+}
+.rupee-box{
+	background: url(../images/rupee.png) #fff no-repeat 98% 50%;;
+	background-size: 16px;
+	padding-right: 27px;
+
+}
+textarea{
+	resize:none;
+	border-radius: 0px !important;
+}
+input{
+	border-radius: 0px !important;
+}
+select{
+	border-radius: 0px !important;
+}
+
+.view-product{
+	height: 25px;
+	width: 25px;
+	cursor: pointer;
+}
+
+
+/*campaign section*/
+.campaign-detail .campaign-percent{
+	background: #1D4F81;
+	padding: 5px;
+	border-right: 1px solid #E7E7E7;
+	color:#fff;
+	font-family: Patua One;
+	font-size: 23px;
+	text-align: center;
+	border-radius: 5px;
+	height: 66px;
+	padding-top: 17px;
+}
+.campaign-detail .campaign-percent img{
+	height: 20px;
+}
+.bottom-label .camp-name{
+	text-align: center;
+	border-bottom: 1px solid #E7E7E7;
+	padding: 4px;
+	font-size: 17px;
+	font-weight: bold;
+}
+.bottom-label .buyer{
+	padding: 3px;
+	padding-left: 20px;
+
+}
+.bottom-label .buyer span{
+	font-family: Patua One;
+}
+.bottom-label .active-inactive{
+	text-align: center;
+	padding-top: 9px;
+}
+.bottom-label .active-inactive div.active{
+	color:rgb(0, 145, 0);
+	font-weight: bold;
+}
+
+.bottom-label .active-inactive div.inactive{
+	color:rgb(206, 10, 18);
+	font-weight: bold;
+}
+
+.bottom-label.expired{
+	border-left: 6px solid rgb(179, 0, 0);
+}
+
+
+div.main-body .right-side #uploaded-image{
+	height: 125px;
+	width: 255px;
+}
+div.main-body .right-side #uploaded-image .img {
+	height: 125px;
+	width: 255px;
+	margin-left: 7px;
+	border: 2px solid #000;
+}
+.camp_images img{
+	height: 136px;
+	width:100%;
+	border:1px solid #000;
+}
+
+.active-btn{
+	background: rgb(2, 131, 2);
+	text-align: center;
+	width: 100px;
+	border-radius: 5px;
+	cursor: pointer;
+	color: #fff;
+	font-weight: bold;
+}
+.inactive-btn{
+	background: rgb(172, 3, 3);
+	text-align: center;
+	width: 100px;
+	border-radius: 5px;
+	cursor: pointer;
+	color: #fff;
+	font-weight: bold;
+}
+/*
+
+div.main-body .right-side .label-text{
+	font-size: 17px;
+	font-family: Gilda Display;
+	padding-right: 30px;
+	text-align: left;
+}
+
+#uploaded-image img{
+	width: 100%;
+	height: 130px;
+}
+
+div.main-body .left-side .section .staff-grid .bottom-label{
+	padding: 4px 20px;
+}
+div.main-body .staff-grid .staff-img{
+	height: 70px;
+	width: 59px;
+	border: 2px solid #000;
+}
+div.main-body .left-side .staff-search input[type="text"]{
+background-size: 20px;
+padding-right: 34px;
+}
+
+div.main-body .right-side .display-div .staff-right-div{
+	max-height: 435px;
+	height: 435px;
+	overflow-y: auto;
+	overflow-x:hidden;
+	padding: 20px;
+}
+div.main-body .right-side .staff-right-div .img{
+	height: 125px;
+	width: 105px;
+	margin-left: 3px;
+	border: 2px solid #000;
+}
+div.main-body .right-side .staff-right-div #uploaded-image .img{
+	height: 125px;
+	width: 105px;
+	margin-left: 3px;
+	border: 2px solid #000;
+}
+div.main-body .right-side .staff-right-div .staff-view{
+	font-size: 16px;
+	font-family: Gilda Display;
+
+}
+div.main-body .right-side .staff-right-div .staff-view .staff-heading{
+	font-weight: bold;
+	color:#1D4F81;
+}
+div.main-body .right-side .edit-btn{
+	height: 22px;
+	width: 22px;
+	cursor: pointer;
+}
+div.main-body .right-side .staff-right-div .upload-file{
+	font-size: 14px;
+	font-weight: normal;
+}
+
+
+*/
+
+/*end staff section*/
+
+
+.campaign-active-btn{
+	margin-left:55px;
+}

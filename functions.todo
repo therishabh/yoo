@@ -1,0 +1,42 @@
+ ☐ fetchbyid($id,$table);
+
+ ☐ fetchbyfield($field,$value,$table);
+
+ ☐ fetchalldata($table);
+
+ ☐ fetchalldatadesc($table);
+
+ ☐ updatedata($data,$id,$table);
+
+ ☐ insertdata($data,$table);
+
+ ☐ fetchlastdata($table);
+
+ ☐ //function for create random string..
+function generateRandomString($length = 3) {
+      $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
+      $randomString = '';
+      for ($i = 0; $i < $length; $i++) {
+          $randomString .= $characters[rand(0, strlen($characters) - 1)];
+      }
+      return $randomString.rand(0,9);
+  }
+
+
+  campaign run krta rhega jab tk ki use delete nahi kiya jayega..
+  ☐ campaign in blur
+    ☐ agar campaign 100% complete ho gya hai..
+    ☐ agar campaign ka time pura ho gya hai but running status true hai..
+
+
+ ☐ products in blur
+   ☐ agar koi campaign 100% complete ho gya hai.. then uske products blur mode me display hoge.
+   ☐ agar koi campaign ka time end ho chuka hai but running status true hai then uske products blur mode me hoge..
+
+ ☐ product only in purchace mode
+   ☐ agar koi campaign 100% complete ho gya hai 
+   ☐ agar koi campaign running hai..
+   ☐ agar koi campaign ka time end ho gya hai but uska running status true hai..
+
+ ☐ product only view mode not in purchase mode
+   agar koi campaign expire hogya hai and uska running status bhi true nahi hai..
